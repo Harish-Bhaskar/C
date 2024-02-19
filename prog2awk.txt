@@ -1,0 +1,28 @@
+Step2: Open text editor, type the below program and save with extention .awk (prog3.awk ) 
+BEGIN { 
+count=0; 
+} 
+{ 
+event=$1; 
+if(event=="d") 
+{ 
+count++; 
+} 
+} 
+END { 
+printf("No of packets dropped : %d\n",count); 
+} 
+
+
+
+
+Step3: Run the simulation program 
+[root@localhost~]# ns prog3.tcl 
+(Here “ns” indicates network simulator. We get the topology shown in the snapshot.)
+
+
+Step 4: Now press the play button in the simulation window and the simulation will begins. 
+Step 5: After simulation is completed run awk file to see the output , 
+[root@localhost~]# awk –f prog3.awk prog3.tr 
+Step 6: To see the trace file contents open the file as , 
+[root@localhost~]# vi prog3.tr  

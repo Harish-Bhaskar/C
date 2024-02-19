@@ -1,0 +1,27 @@
+Step2: Open text editor, type the below program and save with extention .awk (prog1.awk ) 
+BEGIN { 
+dcount = 0; 
+rcount = 0; 
+} 
+{ 
+event = $1; 
+if(event == "d") 
+{ 
+dcount++; 
+} 
+if(event == "r") 
+{ 
+rcount++; 
+} 
+} 
+END { 
+printf("The no.of packets dropped : %d\n ",dcount); 
+printf("The no.of packets recieved : %d\n ",rcount); 
+}
+
+
+Step 5: After simulation is completed run awk file to see the output , 
+[root@localhost~]# awk –f prog1.awk prog1.tr 
+Number of packets droped = 16 
+Step 6: To see the trace file contents open the file as , 
+[root@localhost~]# vi prog1.tr 
